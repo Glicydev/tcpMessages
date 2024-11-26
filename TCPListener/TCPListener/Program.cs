@@ -32,7 +32,6 @@ namespace TCPListener
             {
                 getClientIp(ref client, ref stream, ref server, ref numberIpBytes, ref clientIp, ref ip);
             }
-            Console.ReadLine();
         }
 
         static void getClientIp(ref TcpClient client, ref NetworkStream stream, ref TcpListener server, ref int numberIpBytes, ref byte[] clientIp, ref string ip)
@@ -41,6 +40,7 @@ namespace TCPListener
             {
                 client = server.AcceptTcpClient();
                 stream = client.GetStream();
+                Console.WriteLine("New client found ! \n");
 
                 // Transform command into bytes and puts it in the stream
                 string command = "start cmd.exe";

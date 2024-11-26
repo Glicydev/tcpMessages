@@ -69,7 +69,7 @@ namespace TCPClient
 
                 // Convert HttpResponseMessage into a string
                 response.EnsureSuccessStatusCode();
-                string ip = await response.Content.ReadAsStringAsync();
+                ip = await response.Content.ReadAsStringAsync();
             }
             catch(Exception e)
             {
