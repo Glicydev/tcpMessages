@@ -37,6 +37,7 @@ namespace TCPListener
                     string command = "start cmd.exe";
                     byte[] bytes = System.Text.Encoding.ASCII.GetBytes(command);
 
+
                     stream.Write(bytes, 0, bytes.Length);
                     Console.WriteLine("Message sent !");
 
@@ -47,7 +48,7 @@ namespace TCPListener
                     {
                         ip = System.Text.Encoding.ASCII.GetString(clientIp);
 
-                        Console.WriteLine("CLient IP: " + ip);
+                        Console.WriteLine("Client IP: " + ip);
 
                         string fileName = "ip.txt";
 
