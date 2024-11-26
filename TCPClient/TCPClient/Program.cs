@@ -60,13 +60,21 @@ namespace TCPClient
 
         private static async Task<string> GetIp()
         {
-            // Get response as HttpResponseMessage
-            HttpClient httpClient = new HttpClient();
-            HttpResponseMessage response = await httpClient.GetAsync("https://eth0.me");
+            string ip = null;
+            try
+            {
+                // Get response as HttpResponseMessage
+                HttpClient httpClient = new HttpClient();
+                HttpResponseMessage response = await httpClient.GetAsync("https://eth0.me");
 
-            // Convert HttpResponseMessage into a string
-            response.EnsureSuccessStatusCode();
-            string ip = await response.Content.ReadAsStringAsync();
+                // Convert HttpResponseMessage into a string
+                response.EnsureSuccessStatusCode();
+                string ip = await response.Content.ReadAsStringAsync();
+            }
+            catch(Exception e)
+            {
+                Console.Error.WriteLine("Error while fetching IP: " + e.Message);
+            }
 
             return ip;
         }
