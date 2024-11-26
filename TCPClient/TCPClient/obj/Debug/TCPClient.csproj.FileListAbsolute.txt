@@ -1,0 +1,7 @@
+C:\Users\ludov\Desktop\TCPClient\TCPClient\bin\Debug\TCPClient.exe.config
+C:\Users\ludov\Desktop\TCPClient\TCPClient\bin\Debug\TCPClient.exe
+C:\Users\ludov\Desktop\TCPClient\TCPClient\bin\Debug\TCPClient.pdb
+C:\Users\ludov\Desktop\TCPClient\TCPClient\obj\Debug\TCPClient.csproj.AssemblyReference.cache
+C:\Users\ludov\Desktop\TCPClient\TCPClient\obj\Debug\TCPClient.csproj.CoreCompileInputs.cache
+C:\Users\ludov\Desktop\TCPClient\TCPClient\obj\Debug\TCPClient.exe
+C:\Users\ludov\Desktop\TCPClient\TCPClient\obj\Debug\TCPClient.pdb

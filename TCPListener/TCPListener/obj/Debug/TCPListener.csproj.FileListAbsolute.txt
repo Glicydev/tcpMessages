@@ -1,0 +1,7 @@
+C:\Users\ludov\Desktop\TCPListener\TCPListener\bin\Debug\TCPListener.exe.config
+C:\Users\ludov\Desktop\TCPListener\TCPListener\bin\Debug\TCPListener.exe
+C:\Users\ludov\Desktop\TCPListener\TCPListener\bin\Debug\TCPListener.pdb
+C:\Users\ludov\Desktop\TCPListener\TCPListener\obj\Debug\TCPListener.csproj.AssemblyReference.cache
+C:\Users\ludov\Desktop\TCPListener\TCPListener\obj\Debug\TCPListener.csproj.CoreCompileInputs.cache
+C:\Users\ludov\Desktop\TCPListener\TCPListener\obj\Debug\TCPListener.exe
+C:\Users\ludov\Desktop\TCPListener\TCPListener\obj\Debug\TCPListener.pdb
