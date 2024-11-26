@@ -11,20 +11,26 @@ namespace TCPClient
     {
         static async Task Main(string[] args)
         {
+            // Initialisation
             string ip = await GetIp();
             int port = 13000;
             bool finished = false;
 
+            // Get the IP adress and while the cliend hasn't been able to send bytes, continue
             IPAddress server = IPAddress.Parse("192.168.1.172");
             while (!finished)
-                finished = handleTcp(server, port, ip);
+                finished = HandleTcp(server, port, ip);
             Environment.Exit(0);
         }
 
-        static bool handleTcp(IPAddress server, int port, string ip)
+        /**
+         * Get the message, handle it and send the client IP
+         */
+        static bool HandleTcp(IPAddress server, int port, string ip)
         {
             try
             {
+                // Initialisation
                 TcpClient client = new TcpClient(server.ToString(), port);
                 byte[] bytes = new byte[256];
 
