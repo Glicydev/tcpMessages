@@ -3,7 +3,7 @@
 
 ## Description
 
-Send packages between client and server in C# </br>
+Send packages between client and server in C# <br />
 
 ## Getting Started
 
@@ -17,7 +17,8 @@ Send packages between client and server in C# </br>
 ```
 git clone https://github.com/GlicyDev/tcpMessages
 ```
-<br></br>
+<br />
+
 * Change the server IP in both files by the server you want to
 
 ### Executing program
