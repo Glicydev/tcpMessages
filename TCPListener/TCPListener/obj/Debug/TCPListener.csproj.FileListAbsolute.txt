@@ -12,3 +12,10 @@ C:\Users\ludov\Desktop\tcpMessages\TCPListener\TCPListener\obj\Debug\TCPListener
 C:\Users\ludov\Desktop\tcpMessages\TCPListener\TCPListener\obj\Debug\TCPListener.csproj.CoreCompileInputs.cache
 C:\Users\ludov\Desktop\tcpMessages\TCPListener\TCPListener\obj\Debug\TCPListener.exe
 C:\Users\ludov\Desktop\tcpMessages\TCPListener\TCPListener\obj\Debug\TCPListener.pdb
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPListener\TCPListener\bin\Debug\TCPListener.exe.config
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPListener\TCPListener\bin\Debug\TCPListener.exe
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPListener\TCPListener\bin\Debug\TCPListener.pdb
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPListener\TCPListener\obj\Debug\TCPListener.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPListener\TCPListener\obj\Debug\TCPListener.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPListener\TCPListener\obj\Debug\TCPListener.exe
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPListener\TCPListener\obj\Debug\TCPListener.pdb

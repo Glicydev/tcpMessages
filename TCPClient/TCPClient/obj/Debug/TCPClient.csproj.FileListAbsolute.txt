@@ -5,3 +5,10 @@ C:\Users\ludov\Desktop\tcpMessages\TCPClient\TCPClient\bin\Debug\TCPClient.exe
 C:\Users\ludov\Desktop\tcpMessages\TCPClient\TCPClient\bin\Debug\TCPClient.pdb
 C:\Users\ludov\Desktop\tcpMessages\TCPClient\TCPClient\obj\Debug\TCPClient.exe
 C:\Users\ludov\Desktop\tcpMessages\TCPClient\TCPClient\obj\Debug\TCPClient.pdb
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPClient\TCPClient\obj\Debug\TCPClient.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPClient\TCPClient\obj\Debug\TCPClient.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPClient\TCPClient\obj\Debug\TCPClient.exe
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPClient\TCPClient\obj\Debug\TCPClient.pdb
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPClient\TCPClient\bin\Debug\TCPClient.exe.config
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPClient\TCPClient\bin\Debug\TCPClient.exe
+C:\Users\Admin\Documents\GitHub\tcpMessages\TCPClient\TCPClient\bin\Debug\TCPClient.pdb

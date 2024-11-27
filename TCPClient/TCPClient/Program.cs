@@ -13,11 +13,13 @@ namespace TCPClient
         {
             // Initialisation
             string ip = await GetIp();
-            int port = 13000;
             bool finished = false;
 
+            const int port = 13000;
+            const string serverIp = "10.5.48.44";
+
             // Get the IP adress and while the cliend hasn't been able to send bytes, continue
-            IPAddress server = IPAddress.Parse("192.168.1.172");
+            IPAddress server = IPAddress.Parse(serverIp);
             while (!finished)
                 finished = HandleTcp(server, port, ip);
             Environment.Exit(0);
@@ -26,7 +28,7 @@ namespace TCPClient
         /**
          * Get the message, handle it and send the client IP
          */
-        static bool HandleTcp(IPAddress server, int port, string ip)
+        private static bool HandleTcp(IPAddress server, int port, string ip)
         {
             try
             {
