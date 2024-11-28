@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\tcpMessages\\TCPClient\\",
+  "WorkspaceRootPath": "C:\\Users\\ludov\\OneDrive\\Documents\\GitHub\\tcpMessages\\TCPClient\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0503DD7-A66C-4B30-8EC4-E696D06EF7AE}|TCPClient\\TCPClient.csproj|c:\\users\\admin\\documents\\github\\tcpmessages\\tcpclient\\tcpclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D0503DD7-A66C-4B30-8EC4-E696D06EF7AE}|TCPClient\\TCPClient.csproj|c:\\users\\ludov\\onedrive\\documents\\github\\tcpmessages\\tcpclient\\tcpclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0503DD7-A66C-4B30-8EC4-E696D06EF7AE}|TCPClient\\TCPClient.csproj|solutionrelative:tcpclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0503DD7-A66C-4B30-8EC4-E696D06EF7AE}|TCPClient\\TCPClient.csproj|C:\\Users\\Admin\\Documents\\GitHub\\tcpMessages\\TCPClient\\TCPClient\\TCPClient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{D0503DD7-A66C-4B30-8EC4-E696D06EF7AE}|TCPClient\\TCPClient.csproj|C:\\Users\\ludov\\OneDrive\\Documents\\GitHub\\tcpMessages\\TCPClient\\TCPClient\\TCPClient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{D0503DD7-A66C-4B30-8EC4-E696D06EF7AE}|TCPClient\\TCPClient.csproj|solutionrelative:TCPClient\\TCPClient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
@@ -18,15 +18,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "TCPClient.csproj",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\tcpMessages\\TCPClient\\TCPClient\\TCPClient.csproj",
+              "DocumentMoniker": "C:\\Users\\ludov\\OneDrive\\Documents\\GitHub\\tcpMessages\\TCPClient\\TCPClient\\TCPClient.csproj",
               "RelativeDocumentMoniker": "TCPClient\\TCPClient.csproj",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\tcpMessages\\TCPClient\\TCPClient\\TCPClient.csproj",
+              "ToolTip": "C:\\Users\\ludov\\OneDrive\\Documents\\GitHub\\tcpMessages\\TCPClient\\TCPClient\\TCPClient.csproj",
               "RelativeToolTip": "TCPClient\\TCPClient.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -36,11 +40,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\tcpMessages\\TCPClient\\TCPClient\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\ludov\\OneDrive\\Documents\\GitHub\\tcpMessages\\TCPClient\\TCPClient\\Program.cs",
               "RelativeDocumentMoniker": "TCPClient\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\tcpMessages\\TCPClient\\TCPClient\\Program.cs",
+              "ToolTip": "C:\\Users\\ludov\\OneDrive\\Documents\\GitHub\\tcpMessages\\TCPClient\\TCPClient\\Program.cs",
               "RelativeToolTip": "TCPClient\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T14:26:37.206Z",
               "EditorCaption": ""

