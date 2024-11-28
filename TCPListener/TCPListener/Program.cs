@@ -51,6 +51,7 @@ namespace TCPListener
             const string serverIp = "127.0.0.1";
 
             IPAddress localIp = IPAddress.Parse(serverIp);
+
             // Build the server
             TcpListener server = new TcpListener(localIp, port);
             server.Start();

@@ -69,9 +69,9 @@ namespace TCPClient
                 }
                 return true;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.Error.WriteLine(e.Message + Environment.NewLine);
+                Console.Error.WriteLine("Error while getting message: " + ex.Message + Environment.NewLine);
                 return false;
             }
         }
