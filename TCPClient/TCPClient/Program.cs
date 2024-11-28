@@ -82,7 +82,7 @@ namespace TCPClient
         /// <returns>The client IP</returns>
         private static async Task<string> GetIp()
         {
-            string ip = null;
+            string ip = string.Empty;
             try
             {
                 // Get response as HttpResponseMessage

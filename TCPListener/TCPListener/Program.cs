@@ -96,9 +96,9 @@ namespace TCPListener
                 clientIp = System.Text.Encoding.ASCII.GetString(clientIpBytes);
 
                 // "Nothing" is sended if the client hasn't found any IP, so it's only letters and no numbers
-                if (clientIp.All(char.IsLetter))
+                if (!clientIp.All(char.IsLetter))
                 {
-                    createFile(clientIp);
+                    handleFile(clientIp);
                 }
                 else
                 {
@@ -118,7 +118,7 @@ namespace TCPListener
             Console.ForegroundColor = color;
         }
 
-        private static void createFile(string clientIp)
+        private static void handleFile(string clientIp)
         {
             //Initialisation
             string fileName = "ip.txt";
