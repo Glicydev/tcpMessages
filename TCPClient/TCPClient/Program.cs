@@ -18,7 +18,7 @@ namespace TCPClient
             const string serverIp = "127.0.0.1";
             string ip = await GetIp();
 
-            // Get the IP adress and while the cliend hasn't been able to send bytes, continue
+            // Get the IP adress and while the client hasn't been able to send bytes, continue
             while (!finished)
             {
                 finished = HandleTcp(serverIp, port, ip);
@@ -47,6 +47,7 @@ namespace TCPClient
 
                 string message = string.Empty;
 
+                // Get all the messages sended
                 while (stream.Read(bytes, 0, bytes.Length) != 0)
                 {
                     message = System.Text.Encoding.ASCII.GetString(bytes);
