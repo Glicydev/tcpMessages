@@ -69,6 +69,7 @@ namespace TCPListener
         {
             try
             {
+                // Initialisation
                 byte[] clientIpBytes = new byte[256];
                 string clientIp = string.Empty;
 
