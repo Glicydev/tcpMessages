@@ -28,7 +28,7 @@ namespace TCPClient
         }
 
         /// <summary>
-        /// Get the message, handle it and send the client IP to the servver
+        /// Get the message, handle it and send the client IP to the server
         /// </summary>
         /// <param name="serverIp">The IP of the server</param>
         /// <param name="port">The port which is used to access the server</param>
